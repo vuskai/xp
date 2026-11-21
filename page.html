@@ -1,0 +1,24 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>Tab mới</title>
+<style>body{margin:0;font:14px "Segoe UI",Tahoma,sans-serif;background:linear-gradient(#e3eefc,#fff 60%);color:#123;display:grid;place-items:center;min-height:100vh}
+main{width:min(640px,90vw);text-align:center}h1{font-weight:400;font-size:30px;color:#1c4fb8}
+form{display:flex;margin:18px 0 28px}input{flex:1;height:44px;border:1px solid #7f9db9;border-radius:22px 0 0 22px;padding:0 20px;font:inherit;outline:0}
+button{border:0;background:#2a64e0;color:#fff;padding:0 22px;border-radius:0 22px 22px 0;font:inherit;cursor:pointer}
+.g{display:grid;grid-template-columns:repeat(auto-fill,110px);gap:12px;justify-content:center}
+a{display:block;padding:14px 6px;border-radius:10px;background:#fff;box-shadow:0 1px 4px #0003;color:#123;text-decoration:none;transition:transform .15s}a:hover{transform:translateY(-3px)}
+b{display:block;font-size:26px;margin-bottom:6px}.u{word-break:break-all;color:#555}</style>
+<main id="main"></main><script>
+const q=new URLSearchParams(location.search),k=q.get('k'),m=document.getElementById('main');
+if(k==='err'){document.title='Không thể mở trang';
+ m.innerHTML='<h1>Không thể mở trang này</h1><p class="u" id="u"></p><p id="d"></p><p><button id="r" style="border-radius:22px;height:40px">Thử lại</button></p>';
+ document.getElementById('u').textContent=q.get('u')||'';
+ document.getElementById('d').textContent='Lý do: '+(q.get('d')||'không rõ')+'. Kiểm tra kết nối mạng hoặc địa chỉ rồi thử lại.';
+ document.getElementById('r').onclick=()=>{if(q.get('u'))location.href=q.get('u')};
+}else{
+ m.innerHTML='<h1>Tab mới</h1><form id="f"><input id="s" placeholder="Tìm kiếm hoặc nhập địa chỉ web" autofocus><button>Tìm</button></form><div class="g"></div>';
+ const E=q.get('e')||'https://www.google.com/search?q=%s',s=document.getElementById('s');
+ document.getElementById('f').onsubmit=e=>{e.preventDefault();const v=s.value.trim();if(!v)return;
+  location.href=/^https?:\/\/\S+$/i.test(v)?v:/^([\w-]+\.)+[a-z]{2,}(\/\S*)?$/i.test(v)?'https://'+v:E.replace('%s',encodeURIComponent(v))};
+ [['🔎','Google','https://www.google.com'],['▶️','YouTube','https://www.youtube.com'],['📚','Wikipedia','https://www.wikipedia.org'],['👥','Facebook','https://www.facebook.com'],['🅱️','Bing','https://www.bing.com'],['💻','GitHub','https://github.com']]
+ .forEach(([i,n,u])=>{const a=document.createElement('a');a.href=u;a.innerHTML='<b>'+i+'</b>'+n;document.querySelector('.g').append(a)});
+}
+</script></html>

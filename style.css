@@ -1,0 +1,25 @@
+*{box-sizing:border-box}
+body{margin:0;font:13px "Segoe UI",Tahoma,sans-serif;user-select:none;overflow:hidden;color:#10233f}
+body.bar{background:linear-gradient(#cfe0fb,#9fbdf0)}
+.tabs{display:flex;align-items:flex-end;height:36px;padding:6px 8px 0;gap:3px}
+.tab{display:flex;align-items:center;gap:6px;flex:0 1 210px;min-width:50px;height:30px;padding:0 6px 0 8px;border-radius:8px 8px 0 0;background:#86a9e6;transition:background .15s}
+.tab:hover{background:#a9c4f2}.tab.on{background:#f5f9ff;box-shadow:0 -1px 4px #0003}
+.tab img,.spin,.dot{width:16px;height:16px;flex:none;font-size:13px;line-height:16px}
+.spin{border:2px solid #2a64e0;border-top-color:transparent;border-radius:50%;animation:s .7s linear infinite}
+@keyframes s{to{transform:rotate(1turn)}}
+.ttl{flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.x,.rx{border:0;background:none;width:20px;height:20px;border-radius:50%;cursor:pointer;font-size:11px;line-height:20px;padding:0;flex:none}
+.x:hover,.rx:hover{background:#0002}
+.add{width:28px;height:28px;border:0;border-radius:50%;background:none;font-size:20px;cursor:pointer}.add:hover{background:#fff6}
+.tb{display:flex;align-items:center;gap:4px;height:48px;padding:0 8px;background:#f5f9ff;border-bottom:1px solid #7f9db9}
+.nb{width:34px;height:34px;border:0;border-radius:50%;background:none;font-size:15px;cursor:pointer;transition:background .15s}
+.nb:hover:not(:disabled){background:#d4e2fa}.nb:disabled{opacity:.3;cursor:default}
+.url{flex:1;min-width:80px;height:32px;border:1px solid #7f9db9;border-radius:16px;padding:0 16px;font:inherit;outline:0;user-select:text}
+.url:focus{border-color:#2a64e0;box-shadow:0 0 0 3px #b5cdf7}
+body.panel{background:#f5f9ff;border-left:1px solid #7f9db9;overflow:auto}
+.pbox{padding:12px}.ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.ph h3{margin:0}
+.row{display:flex;align-items:center;gap:6px;padding:7px 8px;border-radius:6px;cursor:pointer}.row:hover{background:#dfeafc}
+.rt{flex:1;min-width:0}.rt b,.rt small{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.rt small{color:#567}
+.in{width:100%;height:30px;margin:4px 0 8px;border:1px solid #7f9db9;border-radius:6px;padding:0 8px;font:inherit;user-select:text}
+.act{height:30px;padding:0 14px;margin:0 0 8px;border:0;border-radius:6px;background:#2a64e0;color:#fff;cursor:pointer}
+.em{color:#567}label{display:block;margin-top:8px}
